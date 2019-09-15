@@ -1,0 +1,38 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/16fcb427-bf84-412c-8bbb-e0b6ce1adbf2/ # 
+version: 1
+title: weather
+
+types:
+  Cities: !include dataType/cities-dataType.raml
+  Weather: !include dataType/weather-dataType.raml
+
+/cities:
+  get:
+    queryParameters:
+      country:
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: Cities
+            examples:
+              output: !include example/cities-example.raml
+
+/weather:
+  get:
+    queryParameters:
+      city:
+        required: true
+      country:
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: Weather
+            examples:
+              output: !include example/weather-example.raml
+      
+

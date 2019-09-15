@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="xml" format="xml">
+      <types:example format="xml" element="NewDataSet" location="examples/GetCitiesByCountry.xml"/>
+    </types:type>
+    <types:type name="json" format="json">
+      <types:shape format="weave" example="examples/GetCitiesByCountry .json"><![CDATA[%dw 2.0
+type json = {|
+  data: {|
+    Country: String, 
+    City: String
+  |}
+|} {"MetadataFormat": "json",
+"example": "{\"data\":{\"Country\":\"Australia\",\"City\":\"Amberley Aerodrome\"}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+</types:mule>

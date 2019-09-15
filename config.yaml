@@ -1,0 +1,4 @@
+ws:
+  wsdl: "http://es-nuc11:8088/mockGlobalWeatherSoap?wsdl"
+  service: "GlobalWeather"
+  port: "GlobalWeatherSoap"
